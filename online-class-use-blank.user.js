@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		online-class-use-blank
 // @namespace	https://github.com/green1052
-// @version		1.0.0
+// @version		1.0.1
 // @homepageURL	https://github.com/green1052/online-class-use-blank
 // @downloadURL https://raw.githubusercontent.com/green1052/online-class-use-blank/main/online-class-use-blank.user.js
 // @include     oc40.ebssw.kr/mypage/userlrn/userLrnView.do?*
@@ -15,7 +15,7 @@
     setTimeout(function () {
         document.querySelectorAll(".tui-editor-contents a").forEach(query => {
             const a = document.createElement("a");
-            a.href = query.innerHTML;
+            a.href = query.attributes[0].value;
             a.target = "_blank";
             a.innerHTML = query.innerHTML;
 
